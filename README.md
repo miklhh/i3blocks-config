@@ -13,6 +13,7 @@ This to is easy to modify, just change the YR.no XML link.
 
 ***
 <h3>Thumbnail:</h3>
+
 ![Thumbnail1](resources/i3blocks-thumbnail-1.png) 
 <br/>
 ![Thumbnail2](resources/i3blocks-thumbnail-2.png)
