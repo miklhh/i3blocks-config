@@ -9,7 +9,7 @@ entypoint for your bug searching. I have not tested any this on any other comput
 and I leave you to fix it for yourself. Heeh.
 <br/> <br/>
 If you want to modify the weather location data, take a look into [config/i3blocks/weather/weather.py](config/i3blocks/weather/weather.py).
-This to is easy to modify, just change the YR.no XML link.
+This to is easy to modify, just change the YR.no XML link. Example YR link: [https://www.yr.no/place/Sverige/%C3%96sterg%C3%B6tland/Link%C3%B6ping/forecast.xml](https://www.yr.no/place/Sverige/%C3%96sterg%C3%B6tland/Link%C3%B6ping/forecast.xml). Simply go to the YR webpage you desire and add */forecast.xml* to the end (english YR version only).
 
 
 <h3>Thumbnail:</h3>
