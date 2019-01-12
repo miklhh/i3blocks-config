@@ -3,12 +3,12 @@ This is my i3blocks configuration. It might require some extra packeages to be i
 
 ***
 <h2> Modification: </h2>
-It is easy to modify the bar. Take a look at [./config/i3blocks/config](.config/i3blocks/config) and
+It is easy to modify the bar. Take a look at [.config/i3blocks/config](config/i3blocks/config) and
 see for yourself how easy it is to modify the bar. If something is not working, this should be the 
 entypoint for your bug searching. I have not tested any this on any other computer, it will probably break
 and i leave you to fix it for yourself. Heeh.
 <br/> <br/>
-If you want to modify the weather location data, take a look into [.config/i3blocks/weather/weather.py](.config/i3blocks/weather/weather.py).
+If you want to modify the weather location data, take a look into [.config/i3blocks/weather/weather.py](config/i3blocks/weather/weather.py).
 This to is easy to modify, just change the YR.no XML link.
 
 ***
