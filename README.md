@@ -3,8 +3,7 @@ This is my i3blocks configuration. It might require some extra packeages to be i
 
 ***
 <h2> Modification: </h2>
-It is easy to modify the bar. Take a look at [config/i3blocks/config](config/i3blocks/config) and
-see for yourself how easy it is to modify the bar. If something is not working, this should be the 
+It is easy to modify the bar. Take a look at [.config/i3blocks/config](https://github.com/miklhh/i3blocks-config/blob/master/.config/i3blocks/config) and see for yourself how easy it is to modify the bar. If something is not working, this should be the 
 entypoint for your bug searching. I have not tested any this on any other computer, it will probably break
 and i leave you to fix it for yourself. Heeh.
 <br/> <br/>
