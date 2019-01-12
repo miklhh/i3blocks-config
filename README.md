@@ -9,9 +9,7 @@ and i leave you to fix it for yourself. Heeh.
 If you want to modify the weather location data, take a look into [config/i3blocks/weather/weather.py](config/i3blocks/weather/weather.py).
 This to is easy to modify, just change the YR.no XML link.
 
-***
 <h3>Thumbnail:</h3>
-
 ![Thumbnail1](resources/i3blocks-thumbnail-1.png) 
 <br/>
 ![Thumbnail2](resources/i3blocks-thumbnail-2.png)
