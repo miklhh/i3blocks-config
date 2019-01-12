@@ -19,7 +19,7 @@ This to is easy to modify, just change the YR.no XML link.
 ![Thumbnail2](resources/i3blocks-thumbnail-2.png)
 ***
 
-** Requiered software and packages. **
+<h2>Requiered software and packages.</h2>
 
 * [I3BLOCKS](https://www.archlinux.org/packages/community/x86_64/i3blocks/): The actuall bar.
 * [NOTO-FONTS-EMOJI](https://www.archlinux.org/packages/extra/any/noto-fonts-emoji/): Or other emojicon font.
