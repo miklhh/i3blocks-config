@@ -24,7 +24,6 @@ This to is easy to modify, just change the YR.no XML link.
 * [NOTO-FONTS-EMOJI](https://www.archlinux.org/packages/extra/any/noto-fonts-emoji/): Or other emojicon font.
 * [DUNST](https://www.archlinux.org/packages/community/x86_64/dunst/): Or other notification daemon.
 * [ACPI](https://www.archlinux.org/packages/community/x86_64/acpi/): For getting battery information.
-* [CPU-STAT](https://github.com/vivaladav/cpu-stat): For getting CPU usage. This should be manually installed and the executable
-    should be runable from '.config/i3blocks/cpu/cpu-stat'.
+* [CPU-STAT](https://github.com/vivaladav/cpu-stat): For getting CPU usage. This should be manually installed and the executable should be runable from '.config/i3blocks/cpu/cpu-stat'.
 * [CURL](https://www.archlinux.org/packages/core/x86_64/curl/): Probably already installed.
 * [PYTHON 3](https://www.archlinux.org/packages/extra/x86_64/python/): Probably already installed.
