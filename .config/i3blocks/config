@@ -1,0 +1,42 @@
+[VIKTOR]
+command=echo "Eyyo whatsup dog."
+interval=once
+color=#0000FF
+
+[SKULL]
+command=echo -e " \xE2\x98\xA0 "
+interval=once
+
+[WEATHER]
+command=~/.config/i3blocks/weather/weather_info.sh
+interval=100
+color=#FADA5E
+
+[DISK]
+command=df -h | egrep "/dev/sda3" | awk '{ printf(" %4s/%s ", $4, $2)}'
+interval=10
+color=#715151
+
+[BATTERY]
+command=echo -e "\U0001F50B \u23F3" $(acpi) | awk '{ printf("%s%s: %s%s ", $1, substr($6, 1, length($6) - 1), $2, substr($7, 0, 5)) }'
+interval=10
+color=#cfa060
+
+[CPU]
+command=~/.config/i3blocks/cpu/cpu_info.sh
+interval=2
+color=#ab9a9a
+
+[MEM]
+command=~/.config/i3blocks/mem/mem_info.sh
+interval=5
+color=#b5a900
+
+[DATE]
+command=date | awk '{ printf(" %s %s %s ", $1, $2, $3)}'
+interval=5
+
+[TIME]
+command=date | awk '{ printf(" %s ", $4) }'
+interval=1
+
