@@ -40,10 +40,11 @@ font pango:monospace 12
 
 <h4> &nbsp;&nbsp; 5. Make audio changes signal the bar: </h4>
 
-The sound level indicator is updated once every tenth second. If you want a more responsive sound indicator you might want use `pkill -RTMIN+1 i3blocks` to send a signal on sound level changes. Here is an example of how this could be accomplished.
+The sound level indicator is updated once every tenth second. If you want a more responsive sound level indicator you can use `pkill -RTMIN+1 i3blocks` to send a signal on sound level changes, this will update the bar instantly. Here is an example of how this could be accomplished.
 
 *~/.config/i3/config*:
 ```
+# User-added function keys:
 bindsym XF86AudioMute         exec --no-startup-id pamixer -t     && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioLowerVolume  exec --no-startup-id pamixer -d 3   && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioRaiseVolume  exec --no-startup-id pamixer -i 3   && pkill -RTMIN+1 i3blocks
