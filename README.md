@@ -1,7 +1,7 @@
 # i3blocks-config
 This is my i3blocks configuration. It might require some extra packeages to be installed.
 
-<h2> Installation: </h2>
+<h2> Standard installation: </h2>
 
 <h4> &nbsp;&nbsp; 1. Install i3blocks: </h4>
 
