@@ -15,7 +15,11 @@ Start of by installing [i3blocks](https://www.archlinux.org/packages/community/x
 
 Recommended font: [noto-fonts-emoji](https://www.archlinux.org/packages/extra/any/noto-fonts-emoji/). All you need to do is install the font, i3 should recognice it and use it automatically.
 
-<h4> &nbsp;&nbsp; 3. Modify i3 configuration file: </h4>
+<h4> &nbsp;&nbsp; 3. Copy the i3blocks configuration directory: </h4>
+
+From the repository root, invoke `cp -r .config ~/'.` This will copy the configuration files to the propriate location. If you already have an i3blocks configuration setup in *~/.config/i3blocks* you might want to back it up first.
+
+<h4> &nbsp;&nbsp; 4. Modify i3 configuration file: </h4>
 
 *~/.config/i3/config*:
 ```
