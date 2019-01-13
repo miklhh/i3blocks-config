@@ -9,7 +9,7 @@ interval=10
 color=#715151
 
 [BATTERY]
-command=echo -e "\U0001F50B" "\u23F3" $(acpi) | awk '{ printf("%s%s: %s%s ", $1, substr($6, 1, length($6) - 1), $2, substr($7, 0, 5)) }'
+command=~/.config/i3blocks/battery/battery_info.sh
 interval=10
 color=#cfa060
 
