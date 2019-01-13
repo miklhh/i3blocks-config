@@ -19,6 +19,13 @@ bar {
   # ...
 }
 ```
+You could also modify the font and font size in this file. The default *pango:monospace* will do just fine. You might want to increese the font size a bit.
+```
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace 12
+```
+
 <h2> Modification: </h2>
 
 It is easy to modify the bar. Take a look at [.config/i3blocks/config](https://github.com/miklhh/i3blocks-config/blob/master/.config/i3blocks/config) and see for yourself how easy it is to modify the bar. If something is not working, this should be the 
