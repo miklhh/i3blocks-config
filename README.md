@@ -5,10 +5,11 @@ This is my i3blocks configuration. It might require some extra packeages to be i
 
 <h4> &nbsp;&nbsp; 1. Install i3blocks: </h4>
 
-Start of by installing [i3blocks](https://www.archlinux.org/packages/community/x86_64/i3blocks/). When istalled, modify *.config/i3/config* in accordance with step two to get i3blocks going:
+Start of by installing [i3blocks](https://www.archlinux.org/packages/community/x86_64/i3blocks/).
 
 <h4> &nbsp;&nbsp; 2. Modify i3-config file: </h4>
 
+*.config/i3/config*
 ```
 bar {
   position top                  # Position should be 'bottom' or 'top'.
