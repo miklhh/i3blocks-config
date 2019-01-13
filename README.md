@@ -5,7 +5,13 @@ This is my i3blocks configuration. It might require some extra packeages to be i
 
 Start of by installing [i3blocks](https://www.archlinux.org/packages/community/x86_64/i3blocks/). When istalled, modify *.config/i3/config* in accordance with:
 ```
-This is some test code.
+bar {
+  position top                  # Position should be 'bottom' or 'top'.
+  status_command i3blocks       # Invoke i3blocks.
+  
+  # Possible other bar configurations go here...
+  # ...
+}
 ```
 <h2> Modification: </h2>
 
