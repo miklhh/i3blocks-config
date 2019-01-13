@@ -3,6 +3,7 @@ This is my i3blocks configuration. It might require some extra packeages to be i
 
 <h2> Installation: </h2>
 
+<h4> 1. </h4>
 Start of by installing [i3blocks](https://www.archlinux.org/packages/community/x86_64/i3blocks/). When istalled, modify *.config/i3/config* in accordance with:
 ```
 bar {
