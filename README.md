@@ -19,7 +19,7 @@ bar {
   # ...
 }
 ```
-You could also modify the font and font size in this file. The default *pango:monospace* will do just fine. You might want to increese the font size a bit.
+You could also modify the font and font size in this file. The default *pango:monospace* will do just fine but you might want to increese the font size based on your needs.
 ```
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
