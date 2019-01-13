@@ -1,7 +1,12 @@
 # i3blocks-config
 This is my i3blocks configuration. It might require some extra packeages to be installed.
 
+<h2> Installation: </h2>
 
+Start of by installing [i3blocks](https://www.archlinux.org/packages/community/x86_64/i3blocks/). When istalled, modify *.config/i3/config* in accordance with:
+```
+This is some test code.
+```
 <h2> Modification: </h2>
 
 It is easy to modify the bar. Take a look at [.config/i3blocks/config](https://github.com/miklhh/i3blocks-config/blob/master/.config/i3blocks/config) and see for yourself how easy it is to modify the bar. If something is not working, this should be the 
