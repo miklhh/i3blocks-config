@@ -7,8 +7,9 @@ This is my i3blocks configuration. It might require some extra packeages to be i
 
 Start of by installing [i3blocks](https://www.archlinux.org/packages/community/x86_64/i3blocks/).
 
-<h4> &nbsp;&nbsp; 2. Modify *.config/i3/config*: </h4>
+<h4> &nbsp;&nbsp; 2. Modify i3 configuration file: </h4>
 
+> .config/i3/config
 ```
 bar {
   position top                  # Position should be 'bottom' or 'top'.
