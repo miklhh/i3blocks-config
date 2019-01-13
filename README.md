@@ -38,6 +38,15 @@ You could also modify the font and font size in this file. The default font *pan
 font pango:monospace 12
 ```
 
+<h4> &nbsp;&nbsp; 5. Make audio changes signal the bar: </h4>'
+
+The sound level indicator is updated once every tenth second. If you want a more responsive sound indicator you might want to  send a signal on sound level changes. Here is an example of how this could be accomplished.
+
+*~/.config/i3/config*:
+```
+asd
+```
+
 <h2> Modification: </h2>
 
 It is easy to modify the bar. Take a look at [.config/i3blocks/config](https://github.com/miklhh/i3blocks-config/blob/master/.config/i3blocks/config) and see for yourself how easy it is to modify the bar. If something is not working, this should be the 
