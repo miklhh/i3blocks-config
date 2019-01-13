@@ -9,7 +9,7 @@ Start of by installing [i3blocks](https://www.archlinux.org/packages/community/x
 
 <h4> &nbsp;&nbsp; 2. Install an emojicon font: </h4>
 
-Recommended font: [noto-fonts-emoji)](https://www.archlinux.org/packages/extra/any/noto-fonts-emoji/). All you need to do is install the font, i3 should recognice it and use it automatically.
+Recommended font: [noto-fonts-emoji](https://www.archlinux.org/packages/extra/any/noto-fonts-emoji/). All you need to do is install the font, i3 should recognice it and use it automatically.
 
 <h4> &nbsp;&nbsp; 3. Modify i3 configuration file: </h4>
 
