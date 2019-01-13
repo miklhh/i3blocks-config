@@ -9,7 +9,7 @@ Start of by installing [i3blocks](https://www.archlinux.org/packages/community/x
 
 <h4> &nbsp;&nbsp; 2. Modify i3 configuration file: </h4>
 
-*~/.config/i3/config*
+*~/.config/i3/config*:
 ```
 bar {
   position top                  # Position should be 'bottom' or 'top'.
