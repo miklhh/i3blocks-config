@@ -17,7 +17,7 @@ Recommended font: [noto-fonts-emoji](https://www.archlinux.org/packages/extra/an
 
 <h4> &nbsp;&nbsp; 3. Copy the i3blocks configuration: </h4>
 
-From the repository root, invoke `cp -r .config ~/.` This will copy the configuration files to the propriate location. If you already have an i3blocks configuration setup in *~/.config/i3blocks* you might want to back it up first.
+From the repository root, invoke `cp -r .config ~/` This will copy the configuration files to the propriate location. If you already have an i3blocks configuration setup in *~/.config/i3blocks* you might want to back it up first.
 
 <h4> &nbsp;&nbsp; 4. Modify i3 configuration file: </h4>
 
