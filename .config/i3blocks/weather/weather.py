@@ -80,8 +80,9 @@ elif forecasts == 1:
     forecast_now = forecast_tabular.find("time")
     temp = forecast_now.find("temperature").attrib.get("value")
     weather = forecast_now.find("symbol").attrib.get("name")
+    precipitation = forecast_now.find("precipitation").attrib.get("value");
 
-    # Day or night
+    # Daytime or nighttime?
     sun_rise = datetime.datetime.strptime(sun_rise_time, "%H:%M")
     sun_set = datetime.datetime.strptime(sun_set_time, "%H:%M")
     now = datetime.datetime.now()
@@ -93,9 +94,17 @@ elif forecasts == 1:
     else:
         print(weather + " ", end="")
 
+    # Print the temperature.
+    print(temp + "\u00B0")
+
     # Print sun rise time.
-    print ("[" + sun_rise_time + " " + sun_rise_emoji + " " + sun_set_time + "]")
-    
+    print ("[" + sun_rise_time + " " + sun_rise_emoji + " " + sun_set_time + "]", end=" ")
+
+    # Print the precipitation.
+    umbrealla_clear = "\u2602"
+    umbrealla_rain = "\u2614"
+    raindrop = "\U0001F6BF"
+    print("[" + raindrop + " " + precipitation + "mm" + "]")
 
 else:
     # Print weather meta data.
