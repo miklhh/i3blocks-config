@@ -77,3 +77,4 @@ This to is easy to modify, just change the YR.no XML link. Example YR link: [htt
 * [CURL](https://www.archlinux.org/packages/core/x86_64/curl/): Probably already installed.
 * [PYTHON 3](https://www.archlinux.org/packages/extra/x86_64/python/): Probably already installed.
 * [PYTHON-REQUESTS](https://www.archlinux.org/packages/extra/any/python-requests/): For getting weather. Could be installed with pip.
+* [LM_SENSORS](https://www.archlinux.org/packages/extra/x86_64/lm_sensors/): For getting CPU temperature.
