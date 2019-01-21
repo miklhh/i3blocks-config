@@ -4,69 +4,91 @@ import xml.etree.ElementTree as ET
 import datetime
 import sys
 import time
+import os
+
+# Forecast URL.
+yr_url = "https://www.yr.no/place/Sverige/%C3%96sterg%C3%B6tland/Link%C3%B6ping/forecast.xml"
 
 
 # Good to have data + funky emojicons.
+forecast_file = os.path.dirname(os.path.realpath(__file__)) + "/forecast.xml"
 date = datetime.datetime.now().strftime("%Y-%m-%d")
-sun_rise_emoji = "\U0001F305"                 # Day         #Night
-weather_types = { "Fair"                : ["\U0001F324", "\U0001F319"],
-                  "Partly cloudy"       : ["\U000026C5", "\U00002601"],
-                  "Clear sky"           : ["\U0001F31E", "\U0001F319"],
-                  "Cloudy"              : ["\U00002601", "\U00002601"],
-                  "Light rain"          : ["\U0001F326", "\U0001F327"],
-                  "Rain"                : ["\U0001F327", "\U0001F327"],
-                  "Heavy Rain"          : ["\U0001F327", "\U0001F327"],
-                  "Snow"                : ["\U00002744", "\U00002744"],
-                  "Heavy snow"          : ["\U00002744", "\U00002744"],
-                  "Foggy"               : ["\U0001F32B", "\U0001F32B"],
-                  "Light snow showers"  : ["\U00000000", "\U00000000"]}
+                                          # Day   #Night
+weather_types = { "Fair"                : ["☀️",   "🌙"],
+                  "Partly cloudy"       : ["⛅",  "☁️"],
+                  "Clear sky"           : ["☀️",   "🌙"],
+                  "Cloudy"              : ["☁️",   "☁️"],
+                  "Light rain"          : ["🌧️",  "🌧️"],
+                  "Rain"                : ["🌧️",  "🌧️"],
+                  "Heavy Rain"          : ["🌧️",  "🌧️"],
+                  "Snow"                : ["🌨️",  "🌨️"],
+                  "Heavy snow"          : ["🌨️",  "🌨️"],
+                  "Foggy"               : ["🌫️",  "🌫️"],
+                  "Light snow showers"  : ["🌨️",  "🌨️"]}
 
 
+# Get the data from YR helper function.
+def get_xml_root():
+    yr_response = 0
+    try:
+        yr_response = requests.get(yr_url)
+        if yr_response.status_code != 200:
+            print("Error: YR status code " + str(yr_response.status_code))
+            exit()
+        else:
+            # We got a new response. Save it to the forecast file.
+            with open(forecast_file, "w") as f:
+                f.write(yr_response.text)
+            # Return the data.
+            return ET.fromstring(yr_response.text)
+    except requests.ConnectionError:
+        # Probably just no internet. Use latest forecast if there it is not to
+        # old.
+        if os.path.isfile(forecast_file):
+            with open(forecast_file) as f:
+                yr_response = f.read()
+            return ET.fromstring(yr_response)
+        else:
+            print("No forecast data.")
+            exit()
+
+
+# Get forecast data from a forecast XML entry..
+def parse_forecast(forecast):
+    time_from =     forecast.attrib.get("from")
+    time_to =       forecast.attrib.get("to")
+    temp =          forecast.find("temperature").attrib.get("value")
+    weather =       forecast.find("symbol").attrib.get("name")
+    wind_dir =      forecast.find("windDirection").attrib.get("code")
+    wind_speed =    forecast.find("windSpeed").attrib.get("mps")
+    pressure =      forecast.find("pressure").attrib.get("value")
+    precipitaion =  forecast.find("precipitation").attrib.get("value")
+    return [time_from,  time_to,    temp,       weather, 
+            wind_dir,   wind_speed, pressure,   precipitaion]
+    
 
 # Command line argument. Get desiered forecasts.
 forecasts = 0
-delay = 0
 if len(sys.argv) == 2:
     forecasts = int(sys.argv[1])
-elif len(sys.argv) == 3:
-    forecasts = int(sys.argv[1])
-    delay = int(sys.argv[2])
 else:
-    print("Error, usage: \"" + sys.argv[0] + " <forecasts> (<delay second>)\"")
+    print("Error, usage: \"" + sys.argv[0] + " <forecasts>\"")
     exit()
 
-# Delay. The user might find it desiereble to sleep for some time, to ex. wait
-# for an internet connection before making the request.
-time.sleep(delay)
 
-# Get the weatherdata from YR.
-yr_url = "https://www.yr.no/place/Sverige/%C3%96sterg%C3%B6tland/Link%C3%B6ping/forecast.xml"
-yr_response = 0
-try:
-    yr_response = requests.get(yr_url)
-except requests.ConnectionError:
-    print("Missing \U0001F4F6")
-    exit()
-yr_xml_root = 0
-if yr_response.status_code != 200:
-    print("Error: YR status code " + str(yr_response.status_code))
-    exit()
-else:
-    yr_xml_root = ET.fromstring(yr_response.text)
-
+# Get the XML root.
+xml_root = get_xml_root()
 
 # Parse the location.
-location = yr_xml_root.find("location")
+location = xml_root.find("location")
 location_name = location.find("name").text
 location_country = location.find("country").text
 
-
 # Parse the sun rise and set time.
-sun_rise_time = yr_xml_root.find("sun").attrib.get("rise");
+sun_rise_time = xml_root.find("sun").attrib.get("rise");
 sun_rise_time = sun_rise_time[ sun_rise_time.find('T') + 1 : len(sun_rise_time) - 3 ]
-sun_set_time = yr_xml_root.find("sun").attrib.get("set");
+sun_set_time = xml_root.find("sun").attrib.get("set");
 sun_set_time = sun_set_time[ sun_set_time.find('T') + 1 : len(sun_set_time) - 3 ]
-
 
 # Get todays weather.
 if forecasts < 1:
@@ -75,14 +97,13 @@ if forecasts < 1:
 
 elif forecasts == 1:
     # One forecast. The user wants it on short form.
-    forecast = yr_xml_root.find("forecast")
-    forecast_tabular = forecast.find("tabular")
-    forecast_now = forecast_tabular.find("time")
-    temp = forecast_now.find("temperature").attrib.get("value")
-    weather = forecast_now.find("symbol").attrib.get("name")
-    precipitation = forecast_now.find("precipitation").attrib.get("value");
+    forecast_now = xml_root.find("forecast").find("tabular").find("time")
+    [time_from, time_to,    
+     temp,      weather, 
+     wind_dir,  wind_speed, 
+     pressure,  precipitation] = parse_forecast(forecast_now);
 
-    # Daytime or nighttime?
+    # Night time?
     sun_rise = datetime.datetime.strptime(sun_rise_time, "%H:%M")
     sun_set = datetime.datetime.strptime(sun_set_time, "%H:%M")
     now = datetime.datetime.now()
@@ -94,24 +115,24 @@ elif forecasts == 1:
     else:
         print(weather + " ", end="")
 
-    # Print the temperature.
-    print(temp + "\u00B0")
+    # Print the temperature and sun times.
+    print(temp + "\u00B0", end=" ")
+    print ("[" + sun_rise_time + " " + "🌅" + " " + sun_set_time + "]", end=" ")
 
-    # Print sun rise time.
-    print ("[" + sun_rise_time + " " + sun_rise_emoji + " " + sun_set_time + "]", end=" ")
+    # Print the precipitation (if there is any).
+    if precipitation != "0":
+        # Print with a wet umbrella
+        print("| ☔ " + precipitation + "mm", end=" ")
 
-    # Print the precipitation.
-    umbrealla_clear = "\u2602"
-    umbrealla_rain = "\u2614"
-    raindrop = "\U0001F6BF"
-    print("[" + raindrop + " " + precipitation + "mm" + "]")
+    # Print wind data.
+    print("| 🍃 " + wind_speed + "m/s " + "(" + wind_dir + ")");
 
-else:
+else: # forecasts > 1
     # Print weather meta data.
     print("Weather from YR.no for: " + location_name + ", " + location_country + ".")
 
     # More than one forecast. The user wants detailed data.
-    forecast = yr_xml_root.find("forecast")
+    forecast = xml_root.find("forecast")
     forecast_tabular = forecast.find("tabular")
 
     # Find max padding from weather.

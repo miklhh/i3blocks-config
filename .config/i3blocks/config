@@ -1,6 +1,6 @@
 [WEATHER]
 command=~/.config/i3blocks/weather/weather_info.sh
-interval=1000
+interval=60
 color=#FEC925
 
 [DISK]
@@ -35,4 +35,3 @@ interval=1
 [TIME]
 command=date | awk '{ printf(" %s ", $4) }'
 interval=1
-

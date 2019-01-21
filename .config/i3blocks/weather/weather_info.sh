@@ -5,4 +5,4 @@ case $BLOCK_BUTTON in
     3) notify-send " $(~/.config/i3blocks/weather/weather.py 5) "
 esac
 
-echo "" $(~/.config/i3blocks/weather/weather.py 1 2) ""
+echo "" $(~/.config/i3blocks/weather/weather.py 1) ""
