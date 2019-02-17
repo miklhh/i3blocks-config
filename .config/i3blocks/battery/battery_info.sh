@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 # If ACPI was not installed, this probably is a battery-less computer.
 ACPI_RES=$(acpi)
 if [ $? -eq 0 ]
@@ -21,7 +20,7 @@ then
     BATTERY_EMOJI=$(echo -e "\U0001F50B")
     HOUR_GLASS_EMOJI=$(echo -e "\u23F3")
     TIME_LEFT=$(echo $TIME_LEFT | awk '{ printf("%s", substr($1, 0, 5)) }')
-    echo "$BATTERY_EMOJI"$BAT_LEVEL: "$HOUR_GLASS_EMOJI"$TIME_LEFT ""
+    echo "$BATTERY_EMOJI"$BAT_LEVEL" $HOUR_GLASS_EMOJI"$TIME_LEFT ""
 
     # Print the short text.
     echo -e "BAT: $BAT_LEVEL"

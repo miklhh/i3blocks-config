@@ -1,6 +1,6 @@
 [WEATHER]
 command=~/.config/i3blocks/weather/weather_info.sh
-interval=60
+interval=300
 color=#FEC925
 
 [DISK]

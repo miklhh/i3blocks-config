@@ -1,15 +1,14 @@
 #!/bin/sh
 
-MUTE=$(echo -e "\U0001F507")
-LOW=$(echo -e "\U0001F508")
-MID=$(echo -e "\U0001F509")
-HIGH=$(echo -e "\U0001F50A")
+MUTE="🔇"
+LOW="🔈"
+MID="🔉"
+HIGH="🔊"
 
-AMIXER=$(amixer get Master | grep "%")
-SOUND_LEVEL=$(echo $AMIXER | awk '{ printf("%s", substr($4, 2, length($4) -3)) }')
-MUTED=$(echo $AMIXER | awk '{ printf("%d", ($6 == "[off]" ? 1 : 0)) }')
+SOUND_LEVEL=$(amixer get Master | awk -F"[][]" '/%/ { print $2 }' | awk -F"%" 'BEGIN{tot=0; i=0} {i++; tot+=$1} END{printf("%s\n", tot/i) }')
+MUTED=$(amixer get Master | awk ' /%/{print ($NF=="[off]" ? 1 : 0); exit;}')
+
 ICON=$MUTE
-
 if [ $MUTED = "1" ]
 then
     ICON=$MUTE
@@ -23,4 +22,4 @@ else
     ICON=$HIGH
 fi
 
-echo "" $ICON $SOUND_LEVEL | awk '{ printf(" %s:%3s\% \n", $1, $2) }'
+echo $ICON $SOUND_LEVEL | awk '{ printf(" %s:%3s%% \n", $1, $2) }'
