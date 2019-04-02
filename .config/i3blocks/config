@@ -4,34 +4,29 @@ interval=300
 color=#FEC925
 
 [DISK]
-command=~/.config/i3blocks/disk/disk_info.sh
-interval=5
+command=df -h / | awk '/\//{ printf(" 💾 %4s/%s ", $4, $2) }'
+interval=2
 color=#C9E3DB
 
 [BATTERY]
 command=~/.config/i3blocks/battery/battery_info.sh
 interval=5
-color=#cfa060
 
 [CPU]
 command=~/.config/i3blocks/cpu/cpu_info.sh
-interval=4
+interval=1
 color=#00B4EB
 
 [MEM]
-command=~/.config/i3blocks/mem/mem_info.sh
-interval=5
+command=free -h | awk '/Mem:/ { printf(" 🐏 %s/%s ", $3, $2) }'
+interval=1
 color=#FEC925
 
 [SOUND]
-command=./.config/i3blocks/sound/sound_info.sh
+command=~/.config/i3blocks/sound/sound_info.sh
 interval=10
 signal=1
 
-[DATE]
-command=date | awk '{ printf(" %s %s %s ", $1, $2, $3) }'
-interval=1
-
-[TIME]
-command=date | awk '{ printf(" %s ", $4) }'
+[TIME_DATE]
+command=date +" %a, %d %b - %H:%M:%S"
 interval=1

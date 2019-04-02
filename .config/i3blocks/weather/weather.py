@@ -100,7 +100,7 @@ else:
     print(weather + " ", end="")
 
 # Print the temperature and sun times.
-print(temp + "\u00B0", end=" ")
+print(temp + "\u00B0C", end=" ")
 print ("[" + sun_rise_time + " " + "🌅" + " " + sun_set_time + "]", end=" ")
 
 # Print the precipitation (if there is any).
