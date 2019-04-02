@@ -70,10 +70,10 @@ This to is easy to modify, just change the YR.no XML link. Example YR link: [htt
 <h2>Requiered software and packages.</h2>
 
 * [I3BLOCKS](https://www.archlinux.org/packages/community/x86_64/i3blocks/): The actuall bar.
-* [NOTO-FONTS-EMOJI](https://www.archlinux.org/packages/extra/any/noto-fonts-emoji/): Or other emojicon font.
-* [ALSA-UTILS](https://www.archlinux.org/packages/extra/x86_64/alsa-utils/) for fetching sound information.
-* [ACPI](https://www.archlinux.org/packages/community/x86_64/acpi/): For getting battery information.
-* [CPU-STAT](https://github.com/vivaladav/cpu-stat): For getting CPU usage. This should be manually installed and the executable should be runable from '.config/i3blocks/cpu/cpu-stat'.
+* [NOTO-FONTS-EMOJI](https://www.archlinux.org/packages/extra/any/noto-fonts-emoji/): Recommended emojicon font.
+* [ALSA-UTILS](https://www.archlinux.org/packages/extra/x86_64/alsa-utils/): For fetching sound information.
+* [ACPI](https://www.archlinux.org/packages/community/x86_64/acpi/): For fetching battery information.
+* [CPU-STAT](https://github.com/vivaladav/cpu-stat): For fetching CPU usage. Compiled binary included.
 * [PYTHON 3](https://www.archlinux.org/packages/extra/x86_64/python/): Probably already installed.
-* [PYTHON-REQUESTS](https://www.archlinux.org/packages/extra/any/python-requests/): For getting weather. Could be installed with pip.
+* [PYTHON-REQUESTS](https://www.archlinux.org/packages/extra/any/python-requests/): For acquiring weather over internet. Could be installed with pip.
 * [LM_SENSORS](https://www.archlinux.org/packages/extra/x86_64/lm_sensors/): For getting CPU temperature.
