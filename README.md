@@ -9,7 +9,7 @@ This is my default i3blocks configuration.
 
 <h4> &nbsp;&nbsp; 1. Install i3blocks: </h4>
 
-Start of by installing [i3blocks](https://www.archlinux.org/packages/community/x86_64/i3blocks/).
+Start of by installing [i3blocks](https://www.archlinux.org/packages/community/x86_64/i3blocks/). Ideally istallation of i3blocks should be performed with your package manager.
 
 <h4> &nbsp;&nbsp; 2. Install an emojicon font: </h4>
 
@@ -17,7 +17,7 @@ Recommended font: [noto-fonts-emoji](https://www.archlinux.org/packages/extra/an
 
 <h4> &nbsp;&nbsp; 3. Copy the i3blocks configuration: </h4>
 
-From the repository root, invoke `cp -r .config ~/` This will copy the configuration files to the propriate location. If you already have an i3blocks configuration setup in *~/.config/i3blocks* you might want to back it up first.
+From the repository root, invoke `cp -r .config ~/` This will copy the configuration files to the propriate directory. __Caution:__ if you already have an i3blocks configuration setup in *~/.config/i3blocks*, you might want to back it up first. Note that i3blocks is __not__ the same as i3status/i3bar. If you haven't used i3blocks before you can proceed without worrying.
 
 <h4> &nbsp;&nbsp; 4. Modify i3 configuration file: </h4>
 
