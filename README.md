@@ -1,8 +1,8 @@
 # i3blocks-config
 This is my default i3blocks configuration.
-![Thumbnail1](resources/i3blocks-thumbnail-3.png) 
+![Thumbnail1](resources/i3blocks-thumbnail-5.png) 
 <br/>
-![Thumbnail2](resources/i3blocks-thumbnail-4.png)
+![Thumbnail2](resources/i3blocks-thumbnail-6.png)
 ***
 
 <h2> Standard installation: </h2>
@@ -62,9 +62,9 @@ This to is easy to modify, just change the YR.no XML link. Example YR link: [htt
 
 <h3>Thumbnail:</h3>
 
-![Thumbnail1](resources/i3blocks-thumbnail-3.png) 
+![Thumbnail1](resources/i3blocks-thumbnail-5.png) 
 <br/>
-![Thumbnail2](resources/i3blocks-thumbnail-4.png)
+![Thumbnail2](resources/i3blocks-thumbnail-6.png)
 ***
 
 <h2>Requiered software and packages.</h2>
