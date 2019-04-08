@@ -7,8 +7,8 @@ then
     # Get essential information. Due to som bug with some versions of acpi it is
     # worth filtering the ACPI result from all lines containing "unavailable".
     BAT_LEVEL=$(echo $ACPI_RES | grep -v "unavailable" | egrep -o "[0-9][0-9]?[0-9]?%")
-    TIME_LEFT=$(echo $ACPI_RES | grep -v "unabailable" | egrep -o "[0-9]{2}:[0-9]{2}:[0-9]{2}")
-    IS_CHARGING=$(echo $ACPI_RES | awk '{ printf("%s", substr($3, 0, length($3)-1) ) }')
+    TIME_LEFT=$(echo $ACPI_RES | grep -v "unavailable" | egrep -o "[0-9]{2}:[0-9]{2}:[0-9]{2}")
+    IS_CHARGING=$(echo $ACPI_RES | grep -v "unavailable" | awk '{ printf("%s", substr($3, 0, length($3)-1) ) }')
 
     # If there is no 'time left' information (when almost fully charged) we 
     # provide information ourselvs.
