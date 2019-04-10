@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Get directory of script incase of non repository root invocation.
 DIR="$(cd "$(dirname "$0")" && pwd)"
