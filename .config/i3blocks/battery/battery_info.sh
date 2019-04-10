@@ -25,12 +25,16 @@ then
     echo "BAT: $BAT_LEVEL"
     
     # Change the font color, depending on the situation.
-    if [ $IS_CHARGING = "Charging" ]
+    if [ "$IS_CHARGING" = "Charging" ]
     then
         # Charging yellow color.
         echo "#D0D000"
     else
-        if [ ${BAT_LEVEL%?} -le 15 ]
+        if [ -z "${BAT_LEVEL}%?" ]
+        then
+            # Empty string test needed for old version of bash. Use green text.
+            echo "#007872"
+        elif [ "${BAT_LEVEL%?}" -le 15 ]
         then
             # Battery very low. Red color.
             echo "#FA1E44"
