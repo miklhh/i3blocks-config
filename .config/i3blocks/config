@@ -1,6 +1,6 @@
 [WEATHER]
 command=~/.config/i3blocks/weather/weather_info.sh
-interval=300
+interval=20
 color=#FEC925
 
 [DISK]
@@ -25,7 +25,7 @@ color=#FEC925
 
 [SOUND]
 command=~/.config/i3blocks/sound/sound_info.sh
-interval=10
+interval=-1
 signal=1
 
 [TIME_DATE]
