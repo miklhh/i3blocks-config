@@ -52,9 +52,8 @@ bindsym XF86AudioRaiseVolume  exec --no-startup-id pamixer -i 3   && pkill -RTMI
 
 <h2> Modification: </h2>
 
-It is easy to modify the bar. Take a look at [.config/i3blocks/config](https://github.com/miklhh/i3blocks-config/blob/master/.config/i3blocks/config) and see for yourself how easy it is to modify the bar. If something is not working, this should be the 
-entypoint for your bug searching. I have not tested any this on any other computer, it will probably break
-and I leave you to fix it for yourself. Heeh.
+It is easy to modify the bar. Take a look at [.config/i3blocks/config](https://github.com/miklhh/i3blocks-config/blob/master/.config/i3blocks/config) and see for yourself how easy it is to modify any of the blocklets. If any blocklet is malfunctioning, this should be the 
+entypoint for bug searching.
 <br/> <br/>
 If you want to modify the weather location data, take a look into [config/i3blocks/weather/weather.py](.config/i3blocks/weather/weather.py).
 This to is easy to modify, just change the YR.no XML link. Example YR link: [https://www.yr.no/place/Sweden/Stockholm/Stockholm/forecast.xml](https://www.yr.no/place/Sweden/Stockholm/Stockholm/forecast.xml). Simply go to the YR webpage you desire and add */forecast.xml* to the end of the URL (english YR version only) to get the appropriate link for the weather script.
@@ -69,7 +68,7 @@ This to is easy to modify, just change the YR.no XML link. Example YR link: [htt
 
 <h2>Requiered software and packages.</h2>
 
-* [I3BLOCKS](https://www.archlinux.org/packages/community/x86_64/i3blocks/): The actuall bar.
+* [I3BLOCKS](https://www.archlinux.org/packages/community/x86_64/i3blocks/): The blocklet generator.
 * [NOTO-FONTS-EMOJI](https://www.archlinux.org/packages/extra/any/noto-fonts-emoji/): Recommended emojicon font.
 * [ALSA-UTILS](https://www.archlinux.org/packages/extra/x86_64/alsa-utils/): For fetching sound information.
 * [ACPI](https://www.archlinux.org/packages/community/x86_64/acpi/): For fetching battery information.

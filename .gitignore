@@ -1,2 +1,3 @@
 .config/i3blocks/weather/forecast.xml
+.config/i3blocks/weather/weather_signaler
 .config/i3blocks/test_performance.sh
