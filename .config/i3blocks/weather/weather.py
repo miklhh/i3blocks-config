@@ -23,6 +23,7 @@ WEATHER_TYPES = { "Fair"               : ["☀️",   "🌙"], #pylint: disable=
                   "Snow"               : ["🌨️",  "🌨️"], #pylint: disable=C0326
                   "Heavy snow"         : ["🌨️",  "🌨️"], #pylint: disable=C0326
                   "Foggy"              : ["🌫️",  "🌫️"], #pylint: disable=C0326
+                  "Fog"                : ["🌫️",  "🌫️"], #pylint: disable=C0326
                   "Light snow showers" : ["🌨️",  "🌨️"]} #pylint: disable=C0326
 
 

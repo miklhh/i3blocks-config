@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "" "$(~/.config/i3blocks/weather/weather.py)" ""
+echo " $(~/.config/i3blocks/weather/weather.py) "
