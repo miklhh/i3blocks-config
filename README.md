@@ -70,11 +70,13 @@ If you want to modify the weather location data, take a look into [config/i3bloc
 
 <h2>Requiered software packages.</h2>
 
-* [I3BLOCKS](https://www.archlinux.org/packages/community/x86_64/i3blocks/): The blocklet generator.
-* [NOTO-FONTS-EMOJI](https://www.archlinux.org/packages/extra/any/noto-fonts-emoji/): Recommended emojicon font.
-* [ALSA-UTILS](https://www.archlinux.org/packages/extra/x86_64/alsa-utils/): For fetching sound information.
-* [ACPI](https://www.archlinux.org/packages/community/x86_64/acpi/): For fetching battery information.
-* [SYSSTAT (MPSTAT)](https://www.archlinux.org/packages/community/x86_64/sysstat/): For fetching CPU usage.
-* [PYTHON 3](https://www.archlinux.org/packages/extra/x86_64/python/): Probably already installed.
-* [PYTHON-REQUESTS](https://www.archlinux.org/packages/extra/any/python-requests/): For acquiring weather over internet. Could be installed with pip.
-* [LM_SENSORS](https://www.archlinux.org/packages/extra/x86_64/lm_sensors/): For getting CPU temperature.
+| Software          | Arch Linux Package | Gentoo Package       | Note  |
+-------------------------------------------------------------------------
+| i3blocks          | [community/i3blocks](https://www.archlinux.org/packages/community/x86_64/i3blocks/)       | [x11-misc/i3blocks](https://packages.gentoo.org/packages/x11-misc/i3blocks)           |       |
+| Noto Color Emoji  | [extra/noto-fonts-emoji](https://www.archlinux.org/packages/extra/any/noto-fonts-emoji/)  | [media-fonts/noto-emoji](https://packages.gentoo.org/packages/media-fonts/noto-emoji) | Gentoo users: [media-libs/freetype](https://packages.gentoo.org/packages/media-libs/freetype) must be emerged with USE=png. |
+| ACPI              | [community/acpi](https://www.archlinux.org/packages/community/x86_64/acpi/)               | [sys-power/acpid](https://packages.gentoo.org/packages/sys-power/acpid)               |       |
+| Sysstat           | [community/sysstat](https://www.archlinux.org/packages/community/x86_64/sysstat/)         | [app-admin/sysstat](https://packages.gentoo.org/packages/app-admin/sysstat)           |       |
+| Python 3          | [extra/python](https://www.archlinux.org/packages/extra/x86_64/python/)                   | >=[dev-lang/python](https://packages.gentoo.org/packages/dev-lang/python)-3.6         |       |
+| Python Requests   | [extra/python-requests](https://www.archlinux.org/packages/extra/any/python-requests/)    | [dev-python/requests](https://packages.gentoo.org/packages/dev-python/requests)       |       |
+| lm_sensors        | [extra/lm_sensors](https://www.archlinux.org/packages/extra/x86_64/lm_sensors/)           | [sys-apps/lm-sensors](https://packages.gentoo.org/packages/sys-apps/lm-sensors)       | Gentoo users: Make sure to include kernel support for hardware monitoring. More info [here](https://wiki.gentoo.org/wiki/Lm_sensors) |
+

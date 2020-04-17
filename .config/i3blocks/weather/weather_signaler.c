@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <signal.h>
 #include <time.h>
+#include <stdio.h>
 
 // Sleep time between daemon updates.
 #define SLEEP_TIME_S    300
@@ -10,8 +11,7 @@
 static int test_internet_connection()
 {
     const char *cmd = "nc -zw1 google.com 443 1> /dev/null 2>&1";
-    int res = system(cmd);
-    return !res;
+    return !system(cmd);
 }
 
 // Signal handler for signaling the weather applet.
@@ -38,7 +38,12 @@ static void timer_handler(int sig, siginfo_t *si, void *uc)
 
     // Signal the weather applet.
     const char *cmd = "pkill -RTMIN+2 i3blocks";
-    system(cmd);
+    if ( system(cmd) )
+    {
+        // Error message should be printed to stdout since stdout is the way to
+        // interface with a user in i3blocks.
+	puts("WEATHER_SIGNALER ERROR\n");
+    }
 }
 
 int timer_init_launch(
