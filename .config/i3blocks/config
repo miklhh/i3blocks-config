@@ -24,7 +24,7 @@ interval=repeat
 color=#00B4EB
 
 [MEM]
-command=free -h | awk '/Mem:/ { printf(" 🐏 %s/%s \n", $3, $2) }'
+command=free -h | awk '/Mem:/ { printf(" 🐏 %5s/%s \n", $3, $2) }'
 interval=1
 color=#FEC925
 
