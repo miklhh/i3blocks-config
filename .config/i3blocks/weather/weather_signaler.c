@@ -22,7 +22,7 @@ static void timer_handler(int sig, siginfo_t *si, void *uc)
     (void) uc;  // Ignore parameter.
 
     // Test for internet connection till found or 20 times.
-    for (int i = 0; i < 20; ++i) 
+    for (int i = 0; i < 20; ++i)
     {
         if (test_internet_connection())
         {
@@ -42,13 +42,13 @@ static void timer_handler(int sig, siginfo_t *si, void *uc)
     {
         // Error message should be printed to stdout since stdout is the way to
         // interface with a user in i3blocks.
-	puts("WEATHER_SIGNALER ERROR\n");
+        puts("WEATHER_SIGNALER ERROR\n");
     }
 }
 
 int timer_init_launch(
-        timer_t *timer, 
-        struct sigevent *sev, 
+        timer_t *timer,
+        struct sigevent *sev,
         struct sigaction *sa,
         struct itimerspec *tspec)
 {
